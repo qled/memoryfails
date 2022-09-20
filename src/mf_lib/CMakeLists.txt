@@ -24,11 +24,12 @@ set_target_properties (libmemoryfails
 
 target_sources (libmemoryfails
     PRIVATE
-        src/memoryfails/Context.cc
+        src/memoryfails/Contexte.cc
         src/memoryfails/trucs/Choux.cc
         src/memoryfails/trucs/Legumes.cc
         src/memoryfails/trucs/Patates.cc
         src/memoryfails/algo/Ainejagne.cc
+        src/memoryfails/algo/Graphe.cc
     )
 
 target_include_directories (libmemoryfails

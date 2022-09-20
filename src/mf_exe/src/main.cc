@@ -1,4 +1,4 @@
-#include <memoryfails/Context.hh>
+#include <memoryfails/Contexte.hh>
 #include <memoryfails/algo/Ainejagne.hh>
 
 #include <string>
@@ -11,6 +11,16 @@ void help(std::string const & arg0_p)
     std::cout << "Usage: " << arg0_p << " <nimp file>" << std::endl;
 }
 
+Contexte * cree_contexte()
+{
+    // On cree le contexte
+    Contexte * pContexte_l = new Contexte();
+    // on l'initialise
+    pContexte_l->init();
+    // et on le retourne
+    return pContexte_l;
+}
+
 int main (int argc, const char ** argv)
 {
     if (argc == 1)
@@ -20,14 +30,16 @@ int main (int argc, const char ** argv)
         return 1;
     }
 
-    Context context_l;
+    Contexte * pContexte_l = cree_contexte();
 
-    std::string arg1_l(argv[1]);
-    Ainejagne engine_l(arg1_l);
+    std::string fichier_l(argv[1]);
+    Ainejagne moteur_l(fichier_l);
 
-    engine_l.runOnContext(&context_l);
+    moteur_l.applique_sur_contexte(pContexte_l);
 
-    context_l.clean();
+    pContexte_l->clean();
+
+    std::cout << "Fin du programme" << std::endl;
 
     return 0;
 }

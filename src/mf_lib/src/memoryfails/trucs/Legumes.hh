@@ -27,11 +27,20 @@ class Legumes
         Legumes();
         Legumes(Legumes const &);
         Legumes& operator=(Legumes const &);
-        ~Legumes();
+        virtual ~Legumes();
 
         Legumes(double poids_p, std::string const & variete_p, Tracabilite * pTracabilite_p = nullptr);
 
-        void setTracabilite(Tracabilite * pTracabilite_p) {pTracabilite_m = pTracabilite_p;}
+        void setPoids(double poids_p) { poids_m = poids_p; }
+        double getPoids() { return poids_m; }
+
+        void setVariete(std::string const & variete_p) { variete_m = variete_p; }
+        std::string const & getVariete() { return variete_m; }
+
+        Tracabilite * getTracabilite() { return pTracabilite_m; }
+        void setTracabilite(Tracabilite * pTracabilite_p) { pTracabilite_m = pTracabilite_p; }
+
+
 };
 
 } // namespace memoryfails

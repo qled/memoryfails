@@ -1,7 +1,7 @@
 #ifndef __AINEJAYNE_HH__
 #define __AINEJAYNE_HH__
 
-#include <memoryfails/Context.hh>
+#include <memoryfails/Contexte.hh>
 
 namespace memoryfails {
 
@@ -17,8 +17,7 @@ class Ainejagne
         Ainejagne& operator=(Ainejagne const &);
         ~Ainejagne();
 
-
-        void runOnContext(Context * context_p);
+        void applique_sur_contexte(Contexte * contexte_p);
 
 };
 
